@@ -1,6 +1,14 @@
 import axios from "axios";
 import Navbar from "../../components/navbar";
-import { CatCard, MainContainer, Title } from "./styled";
+import {
+  CatCard,
+  CatDetail,
+  CatTitle,
+  CatsContainer,
+  ImageCat,
+  MainContainer,
+  Title,
+} from "./styled";
 import { useEffect, useState } from "react";
 
 export const Shop = () => {
@@ -24,14 +32,31 @@ export const Shop = () => {
     });
   }, []);
 
-console.log(catList);
+  const catArray = Object.values(catList);
+
+  const cardCats = catArray.map((item) => {
+    return (
+      <CatCard>
+        <ImageCat src={item.image} />
+
+        <div>
+          <CatTitle>{item.race}</CatTitle>
+          <CatTitle>{item.name}</CatTitle>
+          <CatDetail>{item.color}</CatDetail>
+          <CatDetail>{item.location}</CatDetail>
+          <CatDetail>{item.price}</CatDetail>
+          <CatDetail>{item.weight}</CatDetail>
+        </div>
+      </CatCard>
+    );
+  });
 
   return (
     <>
       <Navbar />
       <MainContainer>
         <Title>Available Cats</Title>
-        <CatCard></CatCard>
+        <CatsContainer>{cardCats}</CatsContainer>
       </MainContainer>
     </>
   );
