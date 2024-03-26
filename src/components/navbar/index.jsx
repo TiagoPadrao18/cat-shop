@@ -1,18 +1,24 @@
 import { useLocation } from "react-router-dom";
-import { StyledLink, StyledNavbar, StyledRightNav } from "./styled";
+import {
+  StyledCartImage,
+  StyledImage,
+  StyledLeftNav,
+  StyledLink,
+  StyledNavbar,
+  StyledRightNav,
+} from "./styled";
 
 const Navbar = () => {
   const NavBarLinks = [
     {
       title: "Home",
-      url: "/home",
+      url: "/public/home",
     },
     {
       title: "Shop",
-      url: "/shop",
+      url: "/public/shop",
     },
   ];
-
 
   const location = useLocation();
 
@@ -25,13 +31,23 @@ const Navbar = () => {
     >
       {item.title}
     </StyledLink>
-
   ));
 
   return (
     <StyledNavbar>
-      <StyledLink>PET-SHOP</StyledLink>    
-      <StyledRightNav>{navElements}</StyledRightNav>
+      <StyledLeftNav>
+        <StyledLink to="/home">
+          <StyledImage src="/src/assets/logo.png" />
+        </StyledLink>
+
+        <StyledLink to="/home">PET-SHOP</StyledLink>
+      </StyledLeftNav>
+      <StyledRightNav>
+        {navElements}
+        <StyledLink>
+          <StyledCartImage src="/src/assets/icons8-cart-96.png" />
+        </StyledLink>
+      </StyledRightNav>
     </StyledNavbar>
   );
 };

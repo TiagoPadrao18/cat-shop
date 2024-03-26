@@ -3,9 +3,9 @@ import styled from "styled-components";
 import css from "styled-components";
 
 export const StyledNavbar = styled.div`
-  width: 100%;
   display: flex;
-  background-color: #0D1F2D;
+  flex-wrap: wrap;
+  background-color: #0d1f2d;
   justify-content: space-between;
 `;
 
@@ -29,4 +29,20 @@ export const StyledLink = styled(Link)`
 export const StyledRightNav = styled.div`
   display: flex;
   column-gap: 2rem;
+  padding-right: 2rem;
+  align-items: center;
+`;
+export const StyledLeftNav = styled.div`
+  display: flex;
+  padding-left: 4rem;
+  align-items: center;
+`;
+
+export const StyledImage = styled.img`
+  width: 20%;
+  padding-left: 7rem;
+`;
+
+export const StyledCartImage = styled.img`
+  width: 30%;
 `;

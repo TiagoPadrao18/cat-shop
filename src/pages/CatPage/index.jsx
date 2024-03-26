@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import {
+  StyledButton,
   StyledContainer,
   StyledImage,
   StyledInfo,
@@ -8,11 +9,11 @@ import {
   StyledSubMain,
   StyledTitle,
 } from "./styled";
+import Button from "../../components/Button";
 
 const CatPage = () => {
   const location = useLocation();
   const cat = location.state;
-  console.log(cat);
 
   return (
     <>
@@ -20,6 +21,7 @@ const CatPage = () => {
         <StyledContainer>
           <StyledTitle>{cat.name}</StyledTitle>
           <StyledImage src={cat.image} />
+          <StyledButton>Buy</StyledButton>
         </StyledContainer>
         <StyledSubMain>
           <StyledRightContainer>

@@ -6,25 +6,22 @@ import PageLayout from "../layout";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/home",
+    element: <Home />,
+  },
+  {
+    path: "/public",
     element: <PageLayout />,
     children: [
       {
-        path: "/home",
-        element: <Home />,
-      },
-      {
-        path: "/shop",
+        path: "shop",
         element: <Shop />,
       },
       {
-        path: "/cat/:id",
+        path: "cat/:id",
         element: <CatPage />,
-      },
-      {
-        path: "*",
-        element: <Navigate to="/home" replace />,
       },
     ],
   },
+  { path: "*", element: <Navigate to="/home" replace /> },
 ]);

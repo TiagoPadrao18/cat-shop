@@ -38,10 +38,9 @@ export const CatCard = styled.div`
   background-color: #546a7b;
   width: 28%;
   padding: 2rem;
-  align-items: center;
   flex-wrap: wrap;
-  row-gap: 1rem;
   column-gap: 2rem;
+  row-gap: 2rem;
   max-width: 400px;
   align-self: stretch;
   &:hover {
@@ -64,11 +63,28 @@ export const LinkButton = styled(Link)`
   padding: 1rem;
   background-color: white;
   border-radius: 10rem;
-
 `;
-
-
 
 export const ImageContainer = styled.div`
-max-width: 100%;
+  max-width: 100%;
+  
 `;
+
+
+export const StyledPagination = styled.div`
+display: flex;
+column-gap: 1rem;
+`;
+
+export const StyledButtonPag = styled.button`
+background-color: #546a7b;
+border: none;
+color: #fff;
+width: 12rem;
+padding: 1rem;
+&:hover{
+  transition: 0.3s ease-in;
+  background-color:#fff;
+  color:black;
+}
+`

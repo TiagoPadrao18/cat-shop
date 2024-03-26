@@ -5,6 +5,7 @@ import { ImageCat, MainContainer, Title } from "./styled";
 const Home = () => {
   return (
     <>
+    <Navbar/>
       <MainContainer>
         <Title>Welcome to Pet Shop</Title>
         <ImageCat src="/src/assets/cat.jpg" alt="an cat image" />
