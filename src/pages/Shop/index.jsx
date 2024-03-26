@@ -6,13 +6,16 @@ import {
   CatTitle,
   CatsContainer,
   ImageCat,
+  LinkButton,
   MainContainer,
   Title,
 } from "./styled";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Shop = () => {
   const url = "https://localhost:8080/cats";
+
   const [catList, setCatList] = useState([
     {
       race: "",
@@ -34,26 +37,26 @@ export const Shop = () => {
 
   const catArray = Object.values(catList);
 
-  const cardCats = catArray.map((item) => {
+  const cardCats = catArray.map((item, key) => {
     return (
       <CatCard>
         <ImageCat src={item.image} />
 
         <div>
-          <CatTitle>{item.race}</CatTitle>
-          <CatTitle>{item.name}</CatTitle>
-          <CatDetail>{item.color}</CatDetail>
-          <CatDetail>{item.location}</CatDetail>
-          <CatDetail>{item.price}</CatDetail>
-          <CatDetail>{item.weight}</CatDetail>
+          <CatTitle>Race: {item.race}</CatTitle>
+          <CatTitle>Name: {item.name}</CatTitle>
+          <CatDetail>${item.price}</CatDetail>
         </div>
+        <LinkButton to={`/cat/${key}`} state={{ ...item }}>
+          {" "}
+          show.more
+        </LinkButton>
       </CatCard>
     );
   });
 
   return (
     <>
-      <Navbar />
       <MainContainer>
         <Title>Available Cats</Title>
         <CatsContainer>{cardCats}</CatsContainer>

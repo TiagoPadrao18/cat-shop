@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
@@ -8,6 +9,7 @@ export const MainContainer = styled.div`
   column-gap: 2rem;
   row-gap: 2rem;
   flex-direction: column;
+  background-color: #9ea3b0;
 `;
 
 export const CatsContainer = styled.div`
@@ -21,7 +23,8 @@ export const CatsContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: black;
+  color: #fff;
+  font-size: 4rem;
 `;
 
 export const ImageCat = styled.img`
@@ -32,13 +35,18 @@ export const ImageCat = styled.img`
 export const CatCard = styled.div`
   display: flex;
   border-radius: 4px;
-  background-color: black;
-  width: 20%;
+  background-color: #546a7b;
+  width: 28%;
   padding: 2rem;
   align-items: center;
+  flex-wrap: wrap;
+  row-gap: 1rem;
   column-gap: 2rem;
-  min-width: 200px;
+  max-width: 400px;
   align-self: stretch;
+  &:hover {
+    box-shadow: 0 0 11px rgba(0, 0, 0);
+  }
 `;
 
 export const CatTitle = styled.h2`
@@ -48,4 +56,19 @@ export const CatTitle = styled.h2`
 
 export const CatDetail = styled.p`
   color: white;
+`;
+
+export const LinkButton = styled(Link)`
+  color: black;
+  text-decoration: none;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 10rem;
+
+`;
+
+
+
+export const ImageContainer = styled.div`
+max-width: 100%;
 `;
