@@ -9,6 +9,7 @@ import {
   LinkButton,
   MainContainer,
   StyledButtonPag,
+  StyledCatInfo,
   StyledPagination,
   Title,
 } from "./styled";
@@ -30,14 +31,14 @@ export const Shop = () => {
     },
   ]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [catsPerPage] = useState(5); 
+  const [catsPerPage] = useState(5);
 
   useEffect(() => {
     axios.get(url).then((response) => {
       setCatList(response.data);
     });
   }, []);
-  
+
   const catArray = Object.values(catList);
   const indexOfLastCat = currentPage * catsPerPage;
   const indexOfFirstCat = indexOfLastCat - catsPerPage;
@@ -46,15 +47,16 @@ export const Shop = () => {
   const cardCats = currentCats.map((item, key) => {
     return (
       <CatCard>
-
-        <ImageContainer>
-          <ImageCat src={item.image} />
-        </ImageContainer>
-        <MainContainer>
-          <CatTitle>Race: {item.race}</CatTitle>
-          <CatTitle>Name: {item.name}</CatTitle>
-          <CatDetail>${item.price}</CatDetail>
-        </MainContainer>
+        <StyledCatInfo>
+          <ImageContainer>
+            <ImageCat src={item.image} />
+          </ImageContainer>
+          <MainContainer>
+            <CatTitle>Race: {item.race}</CatTitle>
+            <CatTitle>Name: {item.name}</CatTitle>
+            <CatDetail>${item.price}</CatDetail>
+          </MainContainer>
+        </StyledCatInfo>
 
         <LinkButton to={`/public/cat/${key}`} state={{ ...item }}>
           {" "}
@@ -77,7 +79,9 @@ export const Shop = () => {
         <CatsContainer>{cardCats}</CatsContainer>
         <StyledPagination>
           {pageNumbers.map((number) => (
-              <StyledButtonPag onClick={() => paginate(number)}>{number}</StyledButtonPag>
+            <StyledButtonPag onClick={() => paginate(number)}>
+              {number}
+            </StyledButtonPag>
           ))}
         </StyledPagination>
       </MainContainer>

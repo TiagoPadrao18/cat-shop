@@ -2,18 +2,17 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
+  padding: 2rem;
   justify-content: center;
   align-items: center;
   column-gap: 2rem;
   row-gap: 2rem;
   flex-direction: column;
-  background-color: #9ea3b0;
 `;
 
 export const CatsContainer = styled.div`
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +27,7 @@ export const Title = styled.h1`
 `;
 
 export const ImageCat = styled.img`
-  width: 50%;
+  width: 100%;
   border-radius: 1rem;
 `;
 
@@ -36,6 +35,8 @@ export const CatCard = styled.div`
   display: flex;
   border-radius: 4px;
   background-color: #546a7b;
+  align-items: center;
+  justify-content: center;
   width: 28%;
   padding: 2rem;
   flex-wrap: wrap;
@@ -49,42 +50,55 @@ export const CatCard = styled.div`
 `;
 
 export const CatTitle = styled.h2`
-  font-size: 1rem;
+  font-size: 1.4rem;
   color: white;
 `;
 
 export const CatDetail = styled.p`
   color: white;
+  font-size: 1.2rem;
 `;
 
 export const LinkButton = styled(Link)`
   color: black;
   text-decoration: none;
-  padding: 1rem;
   background-color: white;
-  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 1.2rem;
 `;
 
 export const ImageContainer = styled.div`
   max-width: 100%;
-  
 `;
 
-
 export const StyledPagination = styled.div`
-display: flex;
-column-gap: 1rem;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 2rem;
+  column-gap: 1rem;
 `;
 
 export const StyledButtonPag = styled.button`
-background-color: #546a7b;
-border: none;
-color: #fff;
-width: 12rem;
-padding: 1rem;
-&:hover{
-  transition: 0.3s ease-in;
-  background-color:#fff;
-  color:black;
-}
-`
+  background-color: #546a7b;
+  border: none;
+  color: #fff;
+  width: 12rem;
+  padding: 1rem;
+  &:hover {
+    transition: 0.3s ease-in;
+    background-color: #fff;
+    color: black;
+  }
+`;
+
+export const StyledCatInfo = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+`;
