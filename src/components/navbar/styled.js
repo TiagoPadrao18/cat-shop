@@ -44,5 +44,5 @@ export const StyledImage = styled.img`
 `;
 
 export const StyledCartImage = styled.img`
-  width: 30%;
+  width: 12%;
 `;

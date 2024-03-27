@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
-  width: 100%;
+
   display: flex;
   padding: 2rem;
   justify-content: center;

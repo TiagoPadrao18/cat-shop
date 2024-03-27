@@ -7,8 +7,21 @@ import {
   StyledNavbar,
   StyledRightNav,
 } from "./styled";
+import { useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({ setCartOpacity }) => {
+  const [opacity, setOpacity] = useState(0);
+
+  const changeOpacity = () => {
+    if (opacity === 0) {
+      setOpacity(100);
+      setCartOpacity(100);
+    } else {
+      setOpacity(0);
+      setCartOpacity(0);
+    }
+  };
+
   const NavBarLinks = [
     {
       title: "Home",
@@ -22,7 +35,6 @@ const Navbar = () => {
 
   const location = useLocation();
 
-  console.log(location.pathname);
   const navElements = NavBarLinks.map((item) => (
     <StyledLink
       to={item.url}
@@ -44,9 +56,13 @@ const Navbar = () => {
       </StyledLeftNav>
       <StyledRightNav>
         {navElements}
-        <StyledLink>
-          <StyledCartImage src="/src/assets/icons8-cart-96.png" />
-        </StyledLink>
+
+          <StyledCartImage
+            src="/src/assets/icons8-cart-96.png"
+            onClick={changeOpacity}
+            opacity={opacity}
+          />
+
       </StyledRightNav>
     </StyledNavbar>
   );

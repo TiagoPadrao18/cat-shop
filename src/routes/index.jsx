@@ -3,6 +3,7 @@ import Shop from "../pages/Shop";
 import Home from "../pages/Home";
 import CatPage from "../pages/CatPage";
 import PageLayout from "../layout";
+import { ShopItems } from "../pages/ShopItems";
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ export const router = createBrowserRouter([
       {
         path: "shop",
         element: <Shop />,
+      },
+      {
+        path: "item",
+        element: <ShopItems/>
       },
       {
         path: "cat/:id",
