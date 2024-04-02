@@ -2,13 +2,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
-
   display: flex;
-  padding: 2rem;
   justify-content: center;
   align-items: center;
   column-gap: 2rem;
-  row-gap: 2rem;
+  row-gap: 1rem;
   flex-direction: column;
 `;
 
@@ -41,8 +39,7 @@ export const CatCard = styled.div`
   padding: 2rem;
   flex-wrap: wrap;
   column-gap: 2rem;
-  row-gap: 2rem;
-  max-width: 400px;
+  max-width: 200px;
   align-self: stretch;
   &:hover {
     box-shadow: 0 0 11px rgba(0, 0, 0);
@@ -50,7 +47,6 @@ export const CatCard = styled.div`
 `;
 
 export const CatTitle = styled.h2`
-  font-size: 1.4rem;
   color: white;
 `;
 
@@ -99,6 +95,7 @@ export const StyledCatInfo = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   column-gap: 2rem;
 `;

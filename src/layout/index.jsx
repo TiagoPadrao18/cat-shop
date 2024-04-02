@@ -12,7 +12,7 @@ const PageLayout = () => {
     <>
       <Navbar setCartOpacity={setCartOpacity} />
       <Div>
-        <Cart opacity={cartOpacity}/>
+        <Cart opacity={cartOpacity} />
       </Div>
       <Outlet />
       <Footer />

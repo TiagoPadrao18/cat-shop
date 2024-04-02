@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import { useContext } from "react";
 import {
   StyledButton,
   StyledContainer,
@@ -10,10 +11,15 @@ import {
   StyledTitle,
 } from "./styled";
 import Button from "../../components/Button";
+import { CartContext } from "../../context/cart";
 
 const CatPage = () => {
   const location = useLocation();
   const cat = location.state;
+  const {cart,addItemsToCart} = useContext(CartContext)
+
+  console.log(cart);
+
 
   return (
     <>
@@ -21,7 +27,7 @@ const CatPage = () => {
         <StyledContainer>
           <StyledTitle>{cat.name}</StyledTitle>
           <StyledImage src={cat.image} />
-          <StyledButton>Buy</StyledButton>
+          <StyledButton onClick={()=>addItemsToCart("gato aqui")}>Buy</StyledButton>
         </StyledContainer>
         <StyledSubMain>
           <StyledRightContainer>

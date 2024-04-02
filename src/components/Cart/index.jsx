@@ -14,6 +14,7 @@ import {
 
 const Cart = ({ opacity }) => {
 
+  const cart= [{}];
     
 
   return (
