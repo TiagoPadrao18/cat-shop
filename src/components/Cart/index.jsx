@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../../context/cart";
 import {
   ButtonCheckout,
   StyledBottomCard,
@@ -13,25 +14,30 @@ import {
 } from "./styled";
 
 const Cart = ({ opacity }) => {
+  const { cart, removeItemFromCart } = useContext(CartContext);
 
-  const cart= [{}];
-    
+  const cartList = [...cart];
+  console.log(cartList);
 
+  const renderedProducts = cartList.map((product) => (
+    <StyledProduct key={product.id}>
+      <StyledProductImage src={product.image} />
+      <StyledProductTitle>{product.name}</StyledProductTitle>
+      <button onClick={() => removeItemFromCart(product.id)}>remove</button>
+    </StyledProduct>
+  ));
+
+  const totalPrice = cart.reduce((acc, product) => acc + product.price, 0);
   return (
     <StyledMainCard opacity={opacity}>
       <StyledTitleContainer>
         <StyledTitle>Cart</StyledTitle>
       </StyledTitleContainer>
-      <StyledScaffold>
-        <StyledProduct>
-          <StyledProductImage></StyledProductImage>
-          <StyledProductTitle>Cat</StyledProductTitle>
-          <StyledProductTotalPrice>$50</StyledProductTotalPrice>
-        </StyledProduct>
-        <StyledBottomCard>
-          <ButtonCheckout>Checkout</ButtonCheckout>
-        </StyledBottomCard>
-      </StyledScaffold>
+      <StyledScaffold>{renderedProducts}</StyledScaffold>
+      <StyledBottomCard>
+        <ButtonCheckout>Checkout</ButtonCheckout>
+        <StyledProductTotalPrice>$ {totalPrice}</StyledProductTotalPrice>
+      </StyledBottomCard>
     </StyledMainCard>
   );
 };

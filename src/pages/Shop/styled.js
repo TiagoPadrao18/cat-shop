@@ -6,7 +6,7 @@ export const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   column-gap: 2rem;
-  row-gap: 1rem;
+  row-gap: 1.5rem;
   flex-direction: column;
 `;
 
@@ -64,6 +64,11 @@ export const LinkButton = styled(Link)`
   justify-content: center;
   padding: 1rem;
   border-radius: 1.2rem;
+  &:hover {
+    transition: 0.3s ease-in-out;
+    background-color: black;
+    color: white;
+  }
 `;
 
 export const ImageContainer = styled.div`

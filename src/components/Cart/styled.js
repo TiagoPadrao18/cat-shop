@@ -10,10 +10,11 @@ export const StyledMainCard = styled.div`
 `;
 
 export const StyledScaffold = styled.div`
-  padding-left: 6rem;
+  height: 80%;
+  padding-left: 4rem;
 `;
 export const StyledTitle = styled.p`
-  margin-left: 6rem;
+  margin-left: 4rem;
   font-size: 2rem;
 `;
 export const StyledTitleContainer = styled.div`
@@ -37,13 +38,23 @@ export const ButtonCheckout = styled.button`
 
 export const StyledProduct = styled.div`
   display: flex;
+  color: #fff;
   column-gap: 1rem;
+  margin-top: 1rem;
 `;
 
 export const StyledBottomCard = styled.div`
+  padding-left: 4rem;
+  padding-bottom: 2rem;
   display: flex;
+  column-gap: 2rem;
 `;
 
-export const StyledProductImage = styled.img``;
+export const StyledProductImage = styled.img`
+  width: 30%;
+`;
 export const StyledProductTitle = styled.p``;
-export const StyledProductTotalPrice = styled.p``;
+export const StyledProductTotalPrice = styled.p`
+  color: #fff;
+  font-size: 1rem;
+`;
