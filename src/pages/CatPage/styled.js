@@ -7,7 +7,7 @@ export const StyledMain = styled.div`
 `;
 
 export const StyledTitle = styled.h1`
-  color: #fff;
+  color: #0d1f2d;
   font-size: 4rem;
   @media (max-width: 768px) {
     font-size: 2rem;
@@ -54,6 +54,17 @@ export const StyledSubMain = styled.div`
 `;
 
 export const StyledInfo = styled.p`
+  color: #0d1f2d;
+  display: flex;
+  column-gap: 1rem;
+  font-size: 2rem;
+  padding: 4px;
+  margin: 0;
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+`;
+export const StyledSpan = styled.p`
   color: #fff;
   font-size: 2rem;
   padding: 4px;

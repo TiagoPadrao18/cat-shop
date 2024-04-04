@@ -8,12 +8,15 @@ import {
   StyledProductImage,
   StyledProductTitle,
   StyledProductTotalPrice,
+  StyledRemoveButton,
   StyledScaffold,
   StyledTitle,
   StyledTitleContainer,
 } from "./styled";
+import { useNavigate } from "react-router-dom";
 
 const Cart = ({ opacity }) => {
+  const navigate = useNavigate();
   const { cart, removeItemFromCart } = useContext(CartContext);
 
   const cartList = [...cart];
@@ -23,7 +26,7 @@ const Cart = ({ opacity }) => {
     <StyledProduct key={product.id}>
       <StyledProductImage src={product.image} />
       <StyledProductTitle>{product.name}</StyledProductTitle>
-      <button onClick={() => removeItemFromCart(product.id)}>remove</button>
+      <StyledRemoveButton onClick={() => removeItemFromCart(product.id)}>remove</StyledRemoveButton>
     </StyledProduct>
   ));
 
@@ -35,7 +38,7 @@ const Cart = ({ opacity }) => {
       </StyledTitleContainer>
       <StyledScaffold>{renderedProducts}</StyledScaffold>
       <StyledBottomCard>
-        <ButtonCheckout>Checkout</ButtonCheckout>
+        <ButtonCheckout onClick={()=>navigate("/public/checkout")}>Checkout</ButtonCheckout>
         <StyledProductTotalPrice>$ {totalPrice}</StyledProductTotalPrice>
       </StyledBottomCard>
     </StyledMainCard>

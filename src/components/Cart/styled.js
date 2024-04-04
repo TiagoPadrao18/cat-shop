@@ -14,11 +14,11 @@ export const StyledScaffold = styled.div`
   padding-left: 4rem;
 `;
 export const StyledTitle = styled.p`
-  margin-left: 4rem;
-  font-size: 2rem;
+  font-size: 1.3rem;
 `;
 export const StyledTitleContainer = styled.div`
   width: 100%;
+  justify-content: center;
   display: flex;
   background-color: #fff;
 `;
@@ -26,13 +26,23 @@ export const StyledTitleContainer = styled.div`
 export const ButtonCheckout = styled.button`
   width: 10rem;
   padding: 1rem;
-
   background-color: white;
   border: none;
   &:hover {
     transition: 0.3s ease-in-out;
     background-color: #0d1f2d;
     color: #fff;
+  }
+`;
+
+export const StyledRemoveButton = styled.button`
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  &:hover {
+    transition: 0.6s ease-in-out;
+    color: black;
   }
 `;
 

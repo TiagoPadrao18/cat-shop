@@ -8,6 +8,7 @@ import {
   StyledInfo,
   StyledMain,
   StyledRightContainer,
+  StyledSpan,
   StyledSubMain,
   StyledTitle,
 } from "./styled";
@@ -26,12 +27,12 @@ const CatPage = () => {
       </StyledContainer>
       <StyledSubMain>
         <StyledRightContainer>
-          <StyledInfo>Race: {cat.race}</StyledInfo>
-          <StyledInfo>Age: {cat.age}</StyledInfo>
-          <StyledInfo>Location: {cat.location}</StyledInfo>
-          <StyledInfo>Color: {cat.color}</StyledInfo>
-          <StyledInfo>Weight: {cat.weight}kg</StyledInfo>
-          <StyledInfo>Price: ${cat.price}</StyledInfo>
+          <StyledInfo>Race: <StyledSpan>{cat.race}</StyledSpan></StyledInfo>
+          <StyledInfo>Age: <StyledSpan>{cat.age}</StyledSpan></StyledInfo>
+          <StyledInfo>Location: <StyledSpan>{cat.location}</StyledSpan></StyledInfo>
+          <StyledInfo>Color: <StyledSpan>{cat.color}</StyledSpan></StyledInfo>
+          <StyledInfo>Weight:<StyledSpan> {cat.weight}kg</StyledSpan></StyledInfo>
+          <StyledInfo>Price: <StyledSpan>${cat.price}</StyledSpan></StyledInfo>
         </StyledRightContainer>
       </StyledSubMain>
     </StyledMain>
