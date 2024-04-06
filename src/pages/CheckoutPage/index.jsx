@@ -7,15 +7,19 @@ import {
   StyledButton,
   StyledCVV,
   StyledForm,
+  StyledImage,
   StyledInputDiv,
+  StyledLabel,
   StyledMainContainer,
   StyledTitle,
+  StyledImageContainer,
+  StyledPrice,
 } from "./styled";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 
 const CheckoutPage = () => {
-  const { cart } = useContext(CartContext);
+  const { price } = useContext(CartContext);
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
 
   const handlePaymentMethodClick = (method) => {
@@ -33,13 +37,7 @@ const CheckoutPage = () => {
           >
             Credit
           </StyledButton>
-          <StyledButton
-            disabled
-            onClick={() => handlePaymentMethodClick("paypal")}
-            selected={selectedPaymentMethod === "paypal"}
-          >
-            Paypal
-          </StyledButton>
+
           <StyledButton
             disabled
             onClick={() => handlePaymentMethodClick("mbway")}
@@ -50,16 +48,24 @@ const CheckoutPage = () => {
         </PaymentMethods>
 
         <StyledInputDiv>
-          <Input placeholder="Card number" required />
+          <Input placeholder="Card number" maxLength="16" required />
           <Input placeholder="Card holder" required />
           <StyledCVV>
             <Input placeholder="Credit Card" type="date" required />
             <Input placeholder="CVV" maxLength="3" />
           </StyledCVV>
           <CheckboxDiv>
-            <input type="checkbox" /> <span>Save my card for future transation</span>
+            <StyledLabel>
+              <input type="checkbox" />
+              Save my card for future transation
+            </StyledLabel>
           </CheckboxDiv>
           <Button text="Checkout" />
+          <StyledPrice>Total price: {price}</StyledPrice>
+          <StyledImageContainer>
+            <StyledImage src="/src/assets/masterCard.png" />
+            <StyledImage src="/src/assets/mbway.png" />
+          </StyledImageContainer>
         </StyledInputDiv>
       </StyledForm>
     </StyledMainContainer>

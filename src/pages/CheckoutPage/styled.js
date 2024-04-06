@@ -50,6 +50,10 @@ export const StyledButton = styled.button`
   }
 `;
 
+export const StyledLabel = styled.label`
+color:#fff;
+`;
+
 export const CheckboxDiv = styled.div`
 display: flex;
 
@@ -57,4 +61,20 @@ display: flex;
 export const StyledCVV = styled.div`
   display: flex;
   column-gap: 1rem;
+`;
+
+
+export const StyledImage = styled.img`
+width: 20%;
+`;
+
+export const StyledImageContainer = styled.div`
+margin-top: 10%;
+display: flex;
+justify-content: center;
+column-gap: 2rem;
+`;
+
+export const StyledPrice = styled.p`
+color: #fff;
 `;

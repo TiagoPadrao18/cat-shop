@@ -10,12 +10,14 @@ const CartProvider = ({ children }) => {
     setCart([...cart, item]);
   };
 
+  const [price,setPrice] = useState(0);
+
   const removeItemFromCart = (itemId) => {
     setCart(cart.filter((item) => item.id !== itemId));
   };
 
   return (
-    <CartContext.Provider value={{ cart, addItemsToCart, removeItemFromCart }}>
+    <CartContext.Provider value={{ cart, price,setPrice, addItemsToCart, removeItemFromCart }}>
       {children}
     </CartContext.Provider>
   );

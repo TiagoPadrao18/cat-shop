@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom";
 
 const Cart = ({ opacity }) => {
   const navigate = useNavigate();
-  const { cart, removeItemFromCart } = useContext(CartContext);
+  const { cart, removeItemFromCart, price, setPrice } = useContext(CartContext);
 
   const cartList = [...cart];
   console.log(cartList);
@@ -26,11 +26,13 @@ const Cart = ({ opacity }) => {
     <StyledProduct key={product.id}>
       <StyledProductImage src={product.image} />
       <StyledProductTitle>{product.name}</StyledProductTitle>
-      <StyledRemoveButton onClick={() => removeItemFromCart(product.id)}>remove</StyledRemoveButton>
+      <StyledRemoveButton onClick={() => removeItemFromCart(product.id)}>
+        remove
+      </StyledRemoveButton>
     </StyledProduct>
   ));
 
-  const totalPrice = cart.reduce((acc, product) => acc + product.price, 0);
+  setPrice(cart.reduce((acc, product) => acc + product.price, 0));
   return (
     <StyledMainCard opacity={opacity}>
       <StyledTitleContainer>
@@ -38,8 +40,10 @@ const Cart = ({ opacity }) => {
       </StyledTitleContainer>
       <StyledScaffold>{renderedProducts}</StyledScaffold>
       <StyledBottomCard>
-        <ButtonCheckout onClick={()=>navigate("/public/checkout")}>Checkout</ButtonCheckout>
-        <StyledProductTotalPrice>$ {totalPrice}</StyledProductTotalPrice>
+        <ButtonCheckout onClick={() => navigate("/public/checkout")}>
+          Checkout
+        </ButtonCheckout>
+        <StyledProductTotalPrice>$ {price}</StyledProductTotalPrice>
       </StyledBottomCard>
     </StyledMainCard>
   );
