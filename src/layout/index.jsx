@@ -11,9 +11,7 @@ const PageLayout = () => {
   return (
     <>
       <Navbar setCartOpacity={setCartOpacity} />
-      <Div>
-        <Cart opacity={cartOpacity} />
-      </Div>
+      <Cart opacity={cartOpacity} />
       <Outlet />
       <Footer />
     </>

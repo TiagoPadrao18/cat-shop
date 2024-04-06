@@ -1,23 +1,29 @@
 import styled from "styled-components";
 
 export const StyledMainCard = styled.div`
-  height: 100%;
+  height: 60%;
   background-color: #546a7b;
-  display: flex;
+  position: fixed;
   opacity: ${({ opacity }) => opacity}%;
   flex-direction: column;
   width: 20%;
+  right: 0;
 `;
 
 export const StyledScaffold = styled.div`
-  height: 80%;
+  height: 70%;
+  display: flex;
+flex-direction: column;
+row-gap: 1rem;
   padding-left: 4rem;
+  margin-bottom: 1rem;
 `;
 export const StyledTitle = styled.p`
   font-size: 1.3rem;
 `;
 export const StyledTitleContainer = styled.div`
   width: 100%;
+  margin-bottom: 1rem;
   justify-content: center;
   display: flex;
   background-color: #fff;
@@ -50,7 +56,6 @@ export const StyledProduct = styled.div`
   display: flex;
   color: #fff;
   column-gap: 1rem;
-  margin-top: 1rem;
 `;
 
 export const StyledBottomCard = styled.div`

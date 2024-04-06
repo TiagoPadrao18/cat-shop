@@ -1,7 +1,7 @@
 import { StyledButton } from "./styled";
 
-const Button = ({ text }) => {
-  return <StyledButton>{text}</StyledButton>;
+const Button = ({ text,...buttonProps }) => {
+  return <StyledButton {...buttonProps}>{text}</StyledButton>;
 };
 
 export default Button;
