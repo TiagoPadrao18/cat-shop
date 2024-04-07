@@ -14,7 +14,6 @@ export const StyledLink = styled(Link)`
   font-size: 1.4rem;
   color: #fff;
   display: flex;
-  padding: 1.5rem;
   &:hover {
     color: gray;
     transition: ease-in-out 0.5s;
@@ -28,8 +27,9 @@ export const StyledLink = styled(Link)`
 
 export const StyledRightNav = styled.div`
   display: flex;
-  column-gap: 2rem;
+  justify-content: space-between;
   padding-right: 2rem;
+column-gap: 2rem;
   align-items: center;
 `;
 export const StyledLeftNav = styled.div`
@@ -44,5 +44,10 @@ export const StyledImage = styled.img`
 `;
 
 export const StyledCartImage = styled.img`
-  width: 12%;
+  width: 6%;
+`;
+
+export const StyledName = styled.p`
+  font-size: 1.4rem;
+  color: #fff;
 `;

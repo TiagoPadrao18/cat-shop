@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledTitle = styled.h1`
-  color: #fff;
+  color: #0d1f2d;
 `;
 
 export const StyledMainContainer = styled.div`
@@ -16,7 +16,7 @@ export const StyledForm = styled.form`
   height: 70%;
   display: flex;
   row-gap: 1rem;
-  padding: 2rem;
+  padding: 3rem;
   flex-direction: column;
   background-color: #546a7b;
   border-radius: 2px;
@@ -51,7 +51,7 @@ export const StyledButton = styled.button`
 `;
 
 export const StyledLabel = styled.label`
-color:#fff;
+  color: #0d1f2d;
 `;
 
 export const CheckboxDiv = styled.div`
@@ -76,5 +76,6 @@ column-gap: 2rem;
 `;
 
 export const StyledPrice = styled.p`
-color: #fff;
+  color: #0d1f2d;
+
 `;

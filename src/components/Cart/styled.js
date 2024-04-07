@@ -8,6 +8,7 @@ export const StyledMainCard = styled.div`
   flex-direction: column;
   width: 20%;
   right: 0;
+  z-index: 1;
 `;
 
 export const StyledScaffold = styled.div`

@@ -4,14 +4,19 @@ import {
   StyledImage,
   StyledLeftNav,
   StyledLink,
+  StyledName,
   StyledNavbar,
   StyledRightNav,
 } from "./styled";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { LoginContext } from "../../context/auth";
 
 const Navbar = ({ setCartOpacity }) => {
   const [opacity, setOpacity] = useState(0);
+  const {username} = useContext(LoginContext);
 
+
+  console.log(username);
   const changeOpacity = () => {
     if (opacity === 0) {
       setOpacity(100);
@@ -22,6 +27,7 @@ const Navbar = ({ setCartOpacity }) => {
     }
   };
 
+
   const NavBarLinks = [
     {
       title: "Home",
@@ -30,7 +36,7 @@ const Navbar = ({ setCartOpacity }) => {
     {
       title: "Shop",
       url: "/public/shop",
-    },
+    }
   ];
 
   const location = useLocation();
@@ -56,7 +62,7 @@ const Navbar = ({ setCartOpacity }) => {
       </StyledLeftNav>
       <StyledRightNav>
         {navElements}
-
+        <StyledName>{username}</StyledName>
           <StyledCartImage
             src="/src/assets/icons8-cart-96.png"
             onClick={changeOpacity}

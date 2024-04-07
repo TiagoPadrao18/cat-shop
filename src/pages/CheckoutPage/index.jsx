@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useContext } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/cart";
 import {
   CheckboxDiv,
@@ -15,20 +15,37 @@ import {
   StyledImageContainer,
   StyledPrice,
 } from "./styled";
+import Toast from "../../components/Toast";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 
 const CheckoutPage = () => {
-  const { price } = useContext(CartContext);
+  const navigate = useNavigate();
+  const { price, removeAllItems} = useContext(CartContext);
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
+  const [visible, setVisible] = useState(false);
+
+const showToastAndChangePage = () => {
+    setVisible(true);
+    removeAllItems()
+    setTimeout(() => {
+      setVisible(false);
+      navigate("/public/home");
+    }, 5000);
+  };
 
   const handlePaymentMethodClick = (method) => {
     setSelectedPaymentMethod(method);
   };
 
+  const submitForm = (event) => {
+    event.preventDefault();
+    showToastAndChangePage();
+  };
+
   return (
     <StyledMainContainer>
-      <StyledForm>
+      <StyledForm onSubmit={submitForm}>
         <StyledTitle>Pay with</StyledTitle>
         <PaymentMethods>
           <StyledButton
@@ -60,12 +77,29 @@ const CheckoutPage = () => {
               Save my card for future transation
             </StyledLabel>
           </CheckboxDiv>
-          <Button text="Checkout" />
-          <StyledPrice>Total price: {price}</StyledPrice>
+          <Button text="Checkout" type="submit" />
+          <StyledPrice>Total price: {price}$</StyledPrice>
           <StyledImageContainer>
             <StyledImage src="/src/assets/masterCard.png" />
             <StyledImage src="/src/assets/mbway.png" />
           </StyledImageContainer>
+          {visible && (
+            <Toast
+              scheme="success"
+              svg={
+                <svg
+                  width="24"
+                  height="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                >
+                  <path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm7 7.457l-9.005 9.565-4.995-5.865.761-.649 4.271 5.016 8.24-8.752.728.685z" />
+                </svg>
+              }
+              message="Payment made successfully"
+            />
+          )}
         </StyledInputDiv>
       </StyledForm>
     </StyledMainContainer>
