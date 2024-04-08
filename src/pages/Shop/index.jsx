@@ -46,7 +46,7 @@ export const Shop = () => {
 
   const cardCats = currentCats.map((item, key) => {
     return (
-      <CatCard>
+      <CatCard key={key}>
         <StyledCatInfo>
           <ImageContainer>
             <ImageCat src={item.image} />
@@ -59,18 +59,19 @@ export const Shop = () => {
         </StyledCatInfo>
 
         <LinkButton to={`/public/cat/${key}`} state={{ ...item }}>
-          {" "}
           show.more
         </LinkButton>
       </CatCard>
     );
   });
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(catArray.length / catsPerPage); i++) {
-    pageNumbers.push(i);
-  }
+  const nextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const prevPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
 
   return (
     <>
@@ -78,11 +79,15 @@ export const Shop = () => {
         <Title>Available Cats</Title>
         <CatsContainer>{cardCats}</CatsContainer>
         <StyledPagination>
-          {pageNumbers.map((number) => (
-            <StyledButtonPag onClick={() => paginate(number)}>
-              {number}
-            </StyledButtonPag>
-          ))}
+          <StyledButtonPag onClick={prevPage} disabled={currentPage === 1}>
+            Previous Page
+          </StyledButtonPag>
+          <StyledButtonPag
+            onClick={nextPage}
+            disabled={indexOfLastCat >= catArray.length}
+          >
+            Next Page
+          </StyledButtonPag>
         </StyledPagination>
       </MainContainer>
     </>

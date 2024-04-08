@@ -21,13 +21,13 @@ import Button from "../../components/Button";
 
 const CheckoutPage = () => {
   const navigate = useNavigate();
-  const { price, removeAllItems} = useContext(CartContext);
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
+  const { price, removeAllItems } = useContext(CartContext);
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
   const [visible, setVisible] = useState(false);
 
-const showToastAndChangePage = () => {
+  const showToastAndChangePage = () => {
     setVisible(true);
-    removeAllItems()
+    removeAllItems();
     setTimeout(() => {
       setVisible(false);
       navigate("/public/home");
@@ -38,32 +38,14 @@ const showToastAndChangePage = () => {
     setSelectedPaymentMethod(method);
   };
 
+  console.log(selectedPaymentMethod);
   const submitForm = (event) => {
     event.preventDefault();
     showToastAndChangePage();
   };
-
-  return (
-    <StyledMainContainer>
-      <StyledForm onSubmit={submitForm}>
-        <StyledTitle>Pay with</StyledTitle>
-        <PaymentMethods>
-          <StyledButton
-            onClick={() => handlePaymentMethodClick("credit")}
-            selected={selectedPaymentMethod === "credit"}
-          >
-            Credit
-          </StyledButton>
-
-          <StyledButton
-            disabled
-            onClick={() => handlePaymentMethodClick("mbway")}
-            selected={selectedPaymentMethod === "mbway"}
-          >
-            Mbway
-          </StyledButton>
-        </PaymentMethods>
-
+  const renderInputs = () => {
+    if (selectedPaymentMethod === "credit") {
+      return (
         <StyledInputDiv>
           <Input placeholder="Card number" maxLength="16" required />
           <Input placeholder="Card holder" required />
@@ -101,6 +83,31 @@ const showToastAndChangePage = () => {
             />
           )}
         </StyledInputDiv>
+      );
+    }
+  };
+
+  return (
+    <StyledMainContainer>
+      <StyledForm onSubmit={submitForm}>
+        <StyledTitle>Pay with</StyledTitle>
+        <PaymentMethods>
+          <StyledButton
+            onClick={() => handlePaymentMethodClick("credit")}
+            selected={selectedPaymentMethod === "credit"}
+          >
+            Credit
+          </StyledButton>
+
+          <StyledButton
+            disabled
+            onClick={() => handlePaymentMethodClick("mbway")}
+            selected={selectedPaymentMethod === "mbway"}
+          >
+            Mbway
+          </StyledButton>
+        </PaymentMethods>
+        {renderInputs()}
       </StyledForm>
     </StyledMainContainer>
   );

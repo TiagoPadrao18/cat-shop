@@ -16,7 +16,7 @@ const Home = () => {
     <>
       <MainContainer>
         <VideoCat src="/src/assets/catVideo.mp4" autoPlay muted loop/>
-        <Title>Welcome to Cat-Shop</Title>
+        <Title>Welcome to Paws & Claws Corne</Title>
         <StyledDivBtn>
           <Link>
             <StyledButton>View more</StyledButton>

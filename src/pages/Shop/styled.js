@@ -25,7 +25,8 @@ export const Title = styled.h1`
 `;
 
 export const ImageCat = styled.img`
-  width: 100%;
+  max-width: 100%;
+
   border-radius: 1rem;
 `;
 

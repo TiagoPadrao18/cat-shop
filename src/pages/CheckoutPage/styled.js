@@ -51,7 +51,7 @@ export const StyledButton = styled.button`
 `;
 
 export const StyledLabel = styled.label`
-  color: #0d1f2d;
+  color: #fff;
 `;
 
 export const CheckboxDiv = styled.div`
@@ -76,6 +76,6 @@ column-gap: 2rem;
 `;
 
 export const StyledPrice = styled.p`
-  color: #0d1f2d;
+  color: #fff;
 
 `;
