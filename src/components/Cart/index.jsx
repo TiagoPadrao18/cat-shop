@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CartContext } from "../../context/cart";
 import {
   ButtonCheckout,
@@ -17,10 +17,21 @@ import { useNavigate } from "react-router-dom";
 
 const Cart = ({ opacity }) => {
   const navigate = useNavigate();
-  const { cart, removeItemFromCart, price, setPrice } = useContext(CartContext);
+  const {
+    cart,
+    removeItemFromCart,
+    price,
+    setPrice,
+    setQuantityInCart,
+  } = useContext(CartContext);
 
   const cartList = [...cart];
-  console.log(cartList);
+
+  useEffect(() => {
+    if (cartList.length >= 0) {
+      setQuantityInCart(cartList.length);
+    }
+  });
 
   const renderedProducts = cartList.map((product) => (
     <StyledProduct key={product.id}>

@@ -1,5 +1,7 @@
 import { useLocation } from "react-router-dom";
 import {
+  StyledCartCount,
+  StyledCartDiv,
   StyledCartImage,
   StyledImage,
   StyledLeftNav,
@@ -7,16 +9,18 @@ import {
   StyledName,
   StyledNavbar,
   StyledRightNav,
+  TestDiv,
 } from "./styled";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { LoginContext } from "../../context/auth";
+import { CartContext } from "../../context/cart";
 
 const Navbar = ({ setCartOpacity }) => {
   const [opacity, setOpacity] = useState(0);
-  const {username} = useContext(LoginContext);
+  const [opacityImg, setOpacityImg] = useState(0);
+  const { username } = useContext(LoginContext);
+  const { quantityInCart } = useContext(CartContext);
 
-
-  console.log(username);
   const changeOpacity = () => {
     if (opacity === 0) {
       setOpacity(100);
@@ -27,6 +31,13 @@ const Navbar = ({ setCartOpacity }) => {
     }
   };
 
+  useEffect(() => {
+    if (quantityInCart > 0) {
+      setOpacityImg(100);
+    } else {
+      setOpacityImg(0);
+    }
+  }, [quantityInCart]);
 
   const NavBarLinks = [
     {
@@ -36,7 +47,7 @@ const Navbar = ({ setCartOpacity }) => {
     {
       title: "Shop",
       url: "/public/shop",
-    }
+    },
   ];
 
   const location = useLocation();
@@ -63,12 +74,18 @@ const Navbar = ({ setCartOpacity }) => {
       <StyledRightNav>
         {navElements}
         <StyledName>{username}</StyledName>
+        <StyledCartDiv>
           <StyledCartImage
             src="/src/assets/icons8-cart-96.png"
             onClick={changeOpacity}
             opacity={opacity}
           />
-
+          <TestDiv>
+            <StyledCartCount onClick={changeOpacity} opacity={opacityImg}>
+              {quantityInCart}
+            </StyledCartCount>
+          </TestDiv>
+        </StyledCartDiv>
       </StyledRightNav>
     </StyledNavbar>
   );

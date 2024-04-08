@@ -44,10 +44,39 @@ export const StyledImage = styled.img`
 `;
 
 export const StyledCartImage = styled.img`
-  width: 6%;
+  width: 100%;
 `;
 
 export const StyledName = styled.p`
   font-size: 1.4rem;
   color: #fff;
+`;
+
+export const TestDiv = styled.div`
+  position: relative;
+`;
+
+export const StyledCartCount = styled.span`
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 3px;
+  position: absolute;
+  top: -5px;
+  right: -5px; 
+  background-color: red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: ${({ opacity }) => opacity}%;
+
+`;
+
+
+export const StyledCartDiv = styled.div`
+display: flex;
+width: 10%;
+
 `;
