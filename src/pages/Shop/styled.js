@@ -3,12 +3,49 @@ import styled from "styled-components";
 
 export const MainContainer = styled.div`
   display: flex;
-  justify-content: center;
+  height: 100%;
+  width: 100%;
+`;
+
+export const MainSubContainer = styled.div`
+  display: flex;
   align-items: center;
   column-gap: 2rem;
   row-gap: 1.5rem;
   flex-direction: column;
 `;
+
+export const LeftFilterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 80%;
+  background-color: #546a7b;
+  border-radius: 1rem;
+  padding-left: 2rem;
+  margin: 2rem 2rem;
+`;
+
+export const FilterTitle = styled.p`
+  color: #fff;
+  font-size: 2rem;
+`;
+
+export const FilterSubtitle = styled.p`
+  color: #fff;
+  font-size: 1rem;
+`;
+
+export const StyledLabel = styled.label`
+  color: #fff;
+`;
+
+export const FilterList = styled.li`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const InputCheckbox = styled.input``;
 
 export const CatsContainer = styled.div`
   display: flex;
@@ -26,7 +63,6 @@ export const Title = styled.h1`
 
 export const ImageCat = styled.img`
   max-width: 100%;
-
   border-radius: 1rem;
 `;
 
@@ -36,24 +72,25 @@ export const CatCard = styled.div`
   background-color: #546a7b;
   align-items: center;
   justify-content: center;
-  width: 28%;
   padding: 2rem;
   flex-wrap: wrap;
   column-gap: 2rem;
   max-width: 200px;
+  height: 400px;
   align-self: stretch;
   &:hover {
     box-shadow: 0 0 11px rgba(0, 0, 0);
   }
 `;
 
-export const CatTitle = styled.h2`
+export const CatTitle = styled.p`
   color: white;
+  font-size: 1.4rem;
 `;
 
 export const CatDetail = styled.p`
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
 `;
 
 export const LinkButton = styled(Link)`
@@ -77,6 +114,7 @@ export const ImageContainer = styled.div`
 `;
 
 export const StyledPagination = styled.div`
+  width: 100%;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;

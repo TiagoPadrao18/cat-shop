@@ -34,13 +34,13 @@ column-gap: 2rem;
 `;
 export const StyledLeftNav = styled.div`
   display: flex;
-  padding-left: 4rem;
+  padding-left: 2rem;
   align-items: center;
 `;
 
 export const StyledImage = styled.img`
   width: 20%;
-  padding-left: 7rem;
+
 `;
 
 export const StyledCartImage = styled.img`

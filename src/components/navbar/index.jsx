@@ -73,7 +73,7 @@ const Navbar = ({ setCartOpacity }) => {
       </StyledLeftNav>
       <StyledRightNav>
         {navElements}
-        <StyledName>{username}</StyledName>
+        <StyledName>{username==null ?username: `Bot`}</StyledName>
         <StyledCartDiv>
           <StyledCartImage
             src="/src/assets/icons8-cart-96.png"
