@@ -33,8 +33,6 @@ export const StyledRightContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 40%;
-  height: 50%;
   border-radius: 6px;
   padding: 2rem;
 `;

@@ -1,21 +1,40 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
+
+const slideDownAnimation = keyframes`
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+`;
+
+
 
 export const StyledMainCard = styled.div`
+
   height: 60%;
-  background-color: #546a7b;
+  background-color: #0d1f2d;
   position: fixed;
-  opacity: ${({ opacity }) => opacity}%;
   flex-direction: column;
   width: 20%;
   right: 0;
   z-index: 1;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  ${({ opacity }) =>
+    opacity === 100 &&
+    css`
+      animation-name: ${slideDownAnimation};
+    `}
+  ${({ opacity }) => opacity === 0 && "display: none;"}
 `;
 
 export const StyledScaffold = styled.div`
   height: 70%;
   display: flex;
-flex-direction: column;
-row-gap: 1rem;
+  flex-direction: column;
+  row-gap: 1rem;
   padding-left: 4rem;
   margin-bottom: 1rem;
 `;
@@ -57,6 +76,11 @@ export const StyledProduct = styled.div`
   display: flex;
   color: #fff;
   column-gap: 1rem;
+`;
+
+export const StyledEmpty = styled.p`
+  color: #fff;
+  font-size: 1rem;
 `;
 
 export const StyledBottomCard = styled.div`

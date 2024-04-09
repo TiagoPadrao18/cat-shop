@@ -67,7 +67,7 @@ const CheckoutPage = () => {
           </StyledImageContainer>
           {visible && (
             <Toast
-              scheme="success"
+           
               svg={
                 <svg
                   width="24"

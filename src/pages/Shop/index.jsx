@@ -36,23 +36,6 @@ export const Shop = () => {
     });
   }, []);
 
-  const nextPage = () => {
-    setCurrentPage((prevPage) => prevPage + 1);
-  };
-
-  const prevPage = () => {
-    setCurrentPage((prevPage) => prevPage - 1);
-  };
-
-  const handleRaceChange = (race) => {
-    const index = selectedRaces.indexOf(race);
-    if (index === -1) {
-      setSelectedRaces([...selectedRaces, race]);
-    } else {
-      setSelectedRaces(selectedRaces.filter((r) => r !== race));
-    }
-  };
-
   const catArray = Object.values(catList);
 
   const filteredCats = catArray.filter((cat) =>
@@ -60,7 +43,7 @@ export const Shop = () => {
   );
 
   console.log(filteredCats);
-  
+
   const indexOfLastCat = currentPage * catsPerPage;
   const indexOfFirstCat = indexOfLastCat - catsPerPage;
   const currentCats = filteredCats.slice(indexOfFirstCat, indexOfLastCat);
@@ -79,8 +62,8 @@ export const Shop = () => {
           </div>
         </StyledCatInfo>
 
-        <LinkButton to={`/public/cat/${key}`} state={{ ...item }}>
-          show.more
+        <LinkButton to={`/public/cat/${item.name}`} state={{ ...item }}>
+          show more
         </LinkButton>
       </CatCard>
     );
@@ -100,6 +83,31 @@ export const Shop = () => {
     );
   });
 
+  const totalPages = Math.ceil(filteredCats.length / catsPerPage);
+
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage((prevPage) => prevPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
+
+
+
+  const isLastPage = indexOfLastCat >= filteredCats.length;
+
+  const handleRaceChange = (race) => {
+    const index = selectedRaces.indexOf(race);
+    if (index === -1) {
+      setSelectedRaces([...selectedRaces, race]);
+    } else {
+      setSelectedRaces(selectedRaces.filter((r) => r !== race));
+    }
+  };
+
   return (
     <>
       <MainContainer>
@@ -117,10 +125,7 @@ export const Shop = () => {
             <StyledButtonPag onClick={prevPage} disabled={currentPage === 1}>
               Previous Page
             </StyledButtonPag>
-            <StyledButtonPag
-              onClick={nextPage}
-              disabled={indexOfLastCat >= catArray.length}
-            >
+            <StyledButtonPag onClick={nextPage} disabled={isLastPage}>
               Next Page
             </StyledButtonPag>
           </StyledPagination>

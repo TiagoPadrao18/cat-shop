@@ -7,6 +7,7 @@ export const StyledNavbar = styled.div`
   flex-wrap: wrap;
   background-color: #0d1f2d;
   justify-content: space-between;
+  width: 100%;
 `;
 
 export const StyledLink = styled(Link)`
@@ -28,7 +29,7 @@ export const StyledLink = styled(Link)`
 export const StyledRightNav = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-right: 2rem;
+  padding-right: 4rem;
 column-gap: 2rem;
   align-items: center;
 `;

@@ -13,6 +13,7 @@ export const MainSubContainer = styled.div`
   column-gap: 2rem;
   row-gap: 1.5rem;
   flex-direction: column;
+  width: 60%;
 `;
 
 export const LeftFilterContainer = styled.div`
@@ -33,7 +34,8 @@ export const FilterTitle = styled.p`
 
 export const FilterSubtitle = styled.p`
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.6rem;
+  
 `;
 
 export const StyledLabel = styled.label`
@@ -42,10 +44,13 @@ export const StyledLabel = styled.label`
 
 export const FilterList = styled.li`
   display: flex;
+  row-gap: 0.5rem;
   flex-direction: column;
 `;
 
-export const InputCheckbox = styled.input``;
+export const InputCheckbox = styled.input`
+accent-color: #0d1f2d;
+`;
 
 export const CatsContainer = styled.div`
   display: flex;

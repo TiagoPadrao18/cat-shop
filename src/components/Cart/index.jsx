@@ -3,6 +3,7 @@ import { CartContext } from "../../context/cart";
 import {
   ButtonCheckout,
   StyledBottomCard,
+  StyledEmpty,
   StyledMainCard,
   StyledProduct,
   StyledProductImage,
@@ -16,6 +17,7 @@ import {
 import { useNavigate } from "react-router-dom";
 
 const Cart = ({ opacity }) => {
+const { quantityInCart } = useContext(CartContext);
   const navigate = useNavigate();
   const {
     cart,
@@ -49,7 +51,7 @@ const Cart = ({ opacity }) => {
       <StyledTitleContainer>
         <StyledTitle>Cart</StyledTitle>
       </StyledTitleContainer>
-      <StyledScaffold>{renderedProducts}</StyledScaffold>
+      <StyledScaffold>{quantityInCart>0 ?renderedProducts : <StyledEmpty>Cart is empty</StyledEmpty>}</StyledScaffold>
       <StyledBottomCard>
         <ButtonCheckout onClick={() => navigate("/public/checkout")}>
           Checkout

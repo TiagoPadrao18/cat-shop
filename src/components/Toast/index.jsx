@@ -1,8 +1,8 @@
 
 import { SVGContainer, StyledToast } from "./styled";
-const Toast = ({ message, user, location, svg, scheme }) => {
+const Toast = ({ message, user, location, svg }) => {
   return (
-    <StyledToast scheme={scheme}>
+    <StyledToast >
       <SVGContainer>{svg}</SVGContainer>
       <p>{message}</p>
       {user && <p>User: {user}</p>}
