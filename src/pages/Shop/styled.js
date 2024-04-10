@@ -13,7 +13,7 @@ export const MainSubContainer = styled.div`
   column-gap: 2rem;
   row-gap: 1.5rem;
   flex-direction: column;
-  width: 60%;
+  width: 70%;
 `;
 
 export const LeftFilterContainer = styled.div`

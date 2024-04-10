@@ -1,6 +1,8 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CartContext } from "../../context/cart";
+import { useDispatch, useSelector } from "react-redux";
+import { getPrice } from "../../store/cart/selectors";
+import { removeAllItemsFromCart } from "../../store/cart/actions";
 import {
   CheckboxDiv,
   PaymentMethods,
@@ -20,14 +22,15 @@ import Input from "../../components/Input";
 import Button from "../../components/Button";
 
 const CheckoutPage = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { price, removeAllItems } = useContext(CartContext);
+  const price = useSelector(getPrice);
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
   const [visible, setVisible] = useState(false);
 
   const showToastAndChangePage = () => {
     setVisible(true);
-    removeAllItems();
+    dispatch(removeAllItemsFromCart());
     setTimeout(() => {
       setVisible(false);
       navigate("/public/home");
@@ -38,7 +41,6 @@ const CheckoutPage = () => {
     setSelectedPaymentMethod(method);
   };
 
-  console.log(selectedPaymentMethod);
   const submitForm = (event) => {
     event.preventDefault();
     showToastAndChangePage();
@@ -67,7 +69,6 @@ const CheckoutPage = () => {
           </StyledImageContainer>
           {visible && (
             <Toast
-           
               svg={
                 <svg
                   width="24"

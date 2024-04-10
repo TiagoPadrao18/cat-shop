@@ -46,6 +46,9 @@ export const StyledImage = styled.img`
 
 export const StyledCartImage = styled.img`
   width: 100%;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const StyledName = styled.p`

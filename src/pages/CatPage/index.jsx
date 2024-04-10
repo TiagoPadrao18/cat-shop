@@ -1,6 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { CartContext } from "../../context/cart";
 import {
   StyledButton,
   StyledContainer,
@@ -13,30 +12,29 @@ import {
   StyledTitle,
 } from "./styled";
 import Toast from "../../components/Toast";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemsToCart } from "../../store/cart/actions";
 
 const CatPage = () => {
+  const dispatch = useDispatch();
   const location = useLocation();
   const cat = location.state;
-  const { addItemsToCart } = useContext(CartContext);
   const [visible, setVisible] = useState(false);
 
   const showToastAndAddToCart = () => {
-    addItemsToCart(cat);
+    dispatch(addItemsToCart(cat));
     setVisible(true);
-
     setTimeout(() => {
       setVisible(false);
     }, 2000);
   };
-
-  
 
   return (
     <StyledMain>
       <StyledContainer>
         <StyledTitle>{cat.name}</StyledTitle>
         <StyledImage src={cat.image} />
-        <StyledButton onClick={()=>showToastAndAddToCart()}>Buy</StyledButton>
+        <StyledButton onClick={() => showToastAndAddToCart()}>Buy</StyledButton>
         {visible && (
           <Toast
             svg={

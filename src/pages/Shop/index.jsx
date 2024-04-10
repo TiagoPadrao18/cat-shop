@@ -42,8 +42,6 @@ export const Shop = () => {
     selectedRaces.length === 0 ? true : selectedRaces.includes(cat.race)
   );
 
-  console.log(filteredCats);
-
   const indexOfLastCat = currentPage * catsPerPage;
   const indexOfFirstCat = indexOfLastCat - catsPerPage;
   const currentCats = filteredCats.slice(indexOfFirstCat, indexOfLastCat);
@@ -94,8 +92,6 @@ export const Shop = () => {
   const prevPage = () => {
     setCurrentPage((prevPage) => prevPage - 1);
   };
-
-
 
   const isLastPage = indexOfLastCat >= filteredCats.length;
 

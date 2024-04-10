@@ -11,15 +11,16 @@ import {
   StyledRightNav,
   TestDiv,
 } from "./styled";
-import { useContext, useState, useEffect } from "react";
-import { LoginContext } from "../../context/auth";
-import { CartContext } from "../../context/cart";
+import { useState, useEffect } from "react";
+import { getUsername } from "../../store/user/selectors";
+import { getQuantityInCart } from "../../store/cart/selectors";
+import { useSelector } from "react-redux";
 
 const Navbar = ({ setCartOpacity }) => {
   const [opacity, setOpacity] = useState(0);
   const [opacityImg, setOpacityImg] = useState(0);
-  const { username } = useContext(LoginContext);
-  const { quantityInCart } = useContext(CartContext);
+  const username = useSelector(getUsername);
+  const quantityInCart = useSelector(getQuantityInCart);
 
   const changeOpacity = () => {
     if (opacity === 0) {
@@ -73,7 +74,7 @@ const Navbar = ({ setCartOpacity }) => {
       </StyledLeftNav>
       <StyledRightNav>
         {navElements}
-        <StyledName>{username==null ?username: `Bot`}</StyledName>
+        <StyledName>{username == null ? username : `Bot`}</StyledName>
         <StyledCartDiv>
           <StyledCartImage
             src="/src/assets/icons8-cart-96.png"
