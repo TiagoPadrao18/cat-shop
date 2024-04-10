@@ -5,6 +5,9 @@ export const MainContainer = styled.div`
   display: flex;
   height: 100%;
   width: 100%;
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 export const MainSubContainer = styled.div`
@@ -25,6 +28,9 @@ export const LeftFilterContainer = styled.div`
   border-radius: 1rem;
   padding-left: 2rem;
   margin: 2rem 2rem;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const FilterTitle = styled.p`
@@ -46,6 +52,7 @@ export const FilterList = styled.li`
   display: flex;
   row-gap: 0.5rem;
   flex-direction: column;
+ 
 `;
 
 export const InputCheckbox = styled.input`
@@ -64,6 +71,9 @@ export const CatsContainer = styled.div`
 export const Title = styled.h1`
   color: #fff;
   font-size: 4rem;
+  @media (max-width: 768px) {
+   font-size: 2rem;
+  }
 `;
 
 export const ImageCat = styled.img`

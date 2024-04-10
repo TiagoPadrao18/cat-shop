@@ -8,6 +8,10 @@ export const StyledNavbar = styled.div`
   background-color: #0d1f2d;
   justify-content: space-between;
   width: 100%;
+  @media (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -32,11 +36,18 @@ export const StyledRightNav = styled.div`
   padding-right: 4rem;
 column-gap: 2rem;
   align-items: center;
+  @media (max-width: 768px) {
+    padding-right: 0;
+  }
 `;
 export const StyledLeftNav = styled.div`
   display: flex;
   padding-left: 2rem;
   align-items: center;
+  @media (max-width: 768px) {
+   display: none;
+
+  }
 `;
 
 export const StyledImage = styled.img`

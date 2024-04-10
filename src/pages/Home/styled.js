@@ -25,8 +25,10 @@ export const Title = styled.h1`
   font-size: 4rem;
   font-weight: 300;
   padding: 1rem;
-
   border-radius: 1rem;
+  @media(max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 export const VideoCat = styled.video`
@@ -60,4 +62,28 @@ export const StyledDivBtn = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+
+
+export const StyledFooter = styled.footer`
+  width: 100%;
+  margin-top: 4rem;
+  background-color: #0d1f2d;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2rem;
+ 
+`;
+
+export const StyledTitle = styled.p`
+  color: white;
+  font-size: 1.4rem;
+`;
+
+export const StyledSocialImg = styled.img`
+  width: 80%;
 `;
