@@ -1,4 +1,5 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
 import {
   StyledCartCount,
   StyledCartDiv,
@@ -19,7 +20,7 @@ import { useSelector } from "react-redux";
 const Navbar = ({ setCartOpacity }) => {
   const [opacity, setOpacity] = useState(0);
   const [opacityImg, setOpacityImg] = useState(0);
-  const username = useSelector(getUsername);
+  const username = localStorage.getItem("userName");
   const quantityInCart = useSelector(getQuantityInCart);
 
   const changeOpacity = () => {
@@ -74,7 +75,7 @@ const Navbar = ({ setCartOpacity }) => {
       </StyledLeftNav>
       <StyledRightNav>
         {navElements}
-        <StyledName>{username == null ? username : `Bot`}</StyledName>
+        <StyledName>{username !== null ? username : <StyledLink to="/login">Login</StyledLink>}</StyledName>
         <StyledCartDiv>
           <StyledCartImage
             src="/src/assets/icons8-cart-96.png"

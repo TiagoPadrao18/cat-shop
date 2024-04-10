@@ -51,6 +51,19 @@ const Cart = ({ opacity }) => {
     </StyledProduct>
   ));
 
+  const verifyIfIsValidToCheckout = () => {
+    if (localStorage.getItem("userName") === null) {
+      alert("Please login first");
+      return;
+    }
+    if (quantityInCart === 0) {
+      alert("Empty cart");
+
+      return;
+    }
+    navigate("/public/checkout");
+  };
+
   dispatch(setPrice(cart.reduce((acc, product) => acc + product.price, 0)));
   return (
     <StyledMainCard opacity={opacity}>
@@ -65,7 +78,7 @@ const Cart = ({ opacity }) => {
         )}
       </StyledScaffold>
       <StyledBottomCard>
-        <ButtonCheckout onClick={() => navigate("/public/checkout")}>
+        <ButtonCheckout onClick={() => verifyIfIsValidToCheckout()}>
           Checkout
         </ButtonCheckout>
         <StyledProductTotalPrice>$ {price}</StyledProductTotalPrice>

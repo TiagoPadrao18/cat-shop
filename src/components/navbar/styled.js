@@ -51,6 +51,7 @@ export const StyledCartImage = styled.img`
   }
 `;
 
+
 export const StyledName = styled.p`
   font-size: 1.4rem;
   color: #fff;

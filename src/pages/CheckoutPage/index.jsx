@@ -42,6 +42,10 @@ const CheckoutPage = () => {
   };
 
   const submitForm = (event) => {
+    if (localStorage.length === 0) {
+      console.log("Please login first");
+      return;
+    }
     event.preventDefault();
     showToastAndChangePage();
   };

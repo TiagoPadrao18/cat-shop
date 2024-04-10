@@ -17,6 +17,7 @@ const LoginPage = () => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const userName = formData.get("userName");
+    localStorage.setItem("userName", userName);
     dispatch(loginUserAction(userName));
     navigate("/public/home");
   };
