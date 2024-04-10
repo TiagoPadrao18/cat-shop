@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const StyledMain = styled.div`
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
+  height: 100vh;
+  column-gap: 3rem;
+  justify-content: center;
 `;
 
 export const StyledTitle = styled.h1`
@@ -17,7 +19,6 @@ export const StyledTitle = styled.h1`
 export const StyledContainer = styled.div`
   display: flex;
   row-gap: 1rem;
-  padding-left: 4rem;
   flex-direction: column;
   align-items: center;
   border-radius: 4px;
@@ -34,7 +35,6 @@ export const StyledRightContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   border-radius: 6px;
-  padding: 2rem;
 `;
 
 export const StyledSubMain = styled.div`
@@ -69,6 +69,7 @@ export const StyledSpan = styled.p`
   margin: 0;
   @media (max-width: 768px) {
     font-size: 1rem;
+    padding: 0;
   }
 `;
 

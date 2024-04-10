@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 
 import {
+  ResponsiveBurger,
   StyledCartCount,
   StyledCartDiv,
   StyledCartImage,
@@ -11,6 +12,11 @@ import {
   StyledNavbar,
   StyledRightNav,
   TestDiv,
+  Trace,
+  MenuMobile,
+  TopMenu,
+  CloseMobile
+
 } from "./styled";
 import { useState, useEffect } from "react";
 import { getUsername } from "../../store/user/selectors";
@@ -64,6 +70,12 @@ const Navbar = ({ setCartOpacity }) => {
     </StyledLink>
   ));
 
+  const [display, setDisplay] = useState("none");
+
+  const renderMenuMobile = () => {
+    setDisplay(display === "none"? "block" : "none");
+  };
+
   return (
     <StyledNavbar>
       <StyledLeftNav>
@@ -75,7 +87,24 @@ const Navbar = ({ setCartOpacity }) => {
       </StyledLeftNav>
       <StyledRightNav>
         {navElements}
-        <StyledName>{username !== null ? username : <StyledLink to="/login">Login</StyledLink>}</StyledName>
+        <StyledName>
+          {username !== null ? (
+            username
+          ) : (
+            <StyledLink to="/login">Login</StyledLink>
+          )}
+        </StyledName>
+
+        <ResponsiveBurger onClick={() => renderMenuMobile()}>
+          <Trace />
+          <Trace />
+          <Trace />
+        </ResponsiveBurger>
+        <MenuMobile display={display}>
+          <TopMenu>
+          <CloseMobile onClick={() => renderMenuMobile()}>X</CloseMobile>
+          </TopMenu>
+        </MenuMobile>
         <StyledCartDiv>
           <StyledCartImage
             src="/src/assets/icons8-cart-96.png"

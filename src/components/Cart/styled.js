@@ -61,14 +61,16 @@ export const ButtonCheckout = styled.button`
   }
 `;
 
-export const StyledRemoveButton = styled.button`
+export const StyledRemoveButton = styled.p`
   background-color: transparent;
   color: white;
   border: none;
+
   font-size: 1rem;
   &:hover {
     transition: 0.6s ease-in-out;
     color: black;
+    cursor: pointer;
   }
 `;
 
@@ -76,6 +78,7 @@ export const StyledProduct = styled.div`
   display: flex;
   color: #fff;
   column-gap: 1rem;
+  align-items: center;
 `;
 
 export const StyledEmpty = styled.p`
