@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getPrice } from "../../store/cart/selectors";
 import { removeAllItemsFromCart } from "../../store/cart/actions";
+import creditImage from "/src/assets/masterCard.png";
 import {
   CheckboxDiv,
   PaymentMethods,
@@ -68,7 +69,7 @@ const CheckoutPage = () => {
           <Button text="Checkout" type="submit" />
           <StyledPrice>Total price: {price}$</StyledPrice>
           <StyledImageContainer>
-            <StyledImage src="/src/assets/masterCard.png" />
+            <StyledImage src={creditImage} />
             <StyledImage src="/src/assets/mbway.png" />
           </StyledImageContainer>
           {visible && (

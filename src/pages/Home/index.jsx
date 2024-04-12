@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
+import videoBg from "/src/assets/catVideo.mp4";
 import {
   MainContainer,
   StyledButton,
@@ -12,7 +13,7 @@ const Home = () => {
   return (
     <>
       <MainContainer>
-        <VideoCat src="/src/assets/catVideo.mp4" autoPlay muted loop />
+        <VideoCat src={videoBg} autoPlay muted loop />
         <Title>Welcome to Paws & Claws Corne</Title>
         <StyledDivBtn>
           <Link>

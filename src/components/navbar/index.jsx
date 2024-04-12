@@ -1,5 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import logo from "/src/assets/logo.png";
+import cartImage from "/src/assets/icons8-cart-96.png";
+import logoutImage from "/src/assets/logout50.png"
 import {
   ResponsiveBurger,
   StyledCartCount,
@@ -94,7 +96,7 @@ const Navbar = ({ setCartOpacity }) => {
     <StyledNavbar>
       <StyledLeftNav>
         <StyledLink to="/public/home">
-          <StyledImage src="/src/assets/logo.png" />
+          <StyledImage src={logo} />
         </StyledLink>
 
         <StyledLink to="/public/home">PET-SHOP</StyledLink>
@@ -110,12 +112,12 @@ const Navbar = ({ setCartOpacity }) => {
         </StyledName>
 
         <StyledCartImage
-          src="/src/assets/icons8-cart-96.png"
+          src={cartImage}
           onClick={changeOpacity}
           opacity={opacity}
         />
         <StyledCartImagee
-          src="/src/assets/logout50.png"
+          src={logoutImage}
           onClick={() => logout()}
         />
 
