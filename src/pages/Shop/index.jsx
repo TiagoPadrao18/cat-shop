@@ -23,7 +23,7 @@ import {
 import { useEffect, useState } from "react";
 
 export const Shop = () => {
-  const url = "https://localhost:8080/cats";
+  const url = "/src/cats.json";
 
   const [catList, setCatList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
