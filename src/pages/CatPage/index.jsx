@@ -40,8 +40,8 @@ const CatPage = () => {
 
         <Optionals>
         <OptionalImageCat src={cat.image} onClick={()=>setCatImage(cat.image)} />
-          <OptionalImageCat src="/src/assets/cat.jpg" onClick={()=>setCatImage("/src/assets/cat.jpg")} />
-          <OptionalImageCat src="/src/assets/cat1.jpeg" onClick={()=>setCatImage("/src/assets/cat1.jpeg")} />
+          <OptionalImageCat src={cat.image2} onClick={()=>setCatImage(cat.image2)} />
+          <OptionalImageCat src={cat.image3} onClick={()=>setCatImage(cat.image3)} />
         </Optionals>
         <StyledButton onClick={() => showToastAndAddToCart()}>Buy</StyledButton>
         {visible && (

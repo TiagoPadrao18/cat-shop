@@ -44,8 +44,13 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledImage = styled.img`
-  max-width: 100%;
+  max-width: 50%;
+max-height: 24%;
   border-radius: 2rem;
+  @media(max-width: 768px){
+    max-width: 100%;
+    max-height: 100%;
+  }
 `;
 
 export const StyledRightContainer = styled.div`

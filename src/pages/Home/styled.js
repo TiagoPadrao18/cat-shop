@@ -29,6 +29,8 @@ export const Title = styled.h1`
   border-radius: 1rem;
   @media(max-width: 768px) {
     font-size: 2rem;
+    background-color: transparent;
+    color:#0d1f2d;
   }
 `;
 
@@ -40,6 +42,9 @@ export const VideoCat = styled.video`
   min-width: 100%;
   min-height: 100vh;
   z-index: -1;
+  @media(max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const StyledButton = styled.button`

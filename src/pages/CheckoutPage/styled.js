@@ -22,6 +22,10 @@ export const StyledForm = styled.form`
   background-color: #0d1f2d;
   border-radius: 2px;
   box-shadow: 1px 3px 22px 0px rgba(0, 0, 0, 0.75);
+  @media(max-width: 768px) {
+    width: 80%;
+  }
+
 `;
 
 export const StyledInputDiv = styled.div`

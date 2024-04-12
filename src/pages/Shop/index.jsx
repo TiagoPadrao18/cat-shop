@@ -22,8 +22,11 @@ import {
 } from "./styled";
 import { useEffect, useState } from "react";
 
+
 export const Shop = () => {
-  const url = "/src/cats.json";
+  const url = "https://localhost:8080/cats";
+  const url2 = "/src/pages/Shop/cats.json";
+  console.log(url2);
 
   const [catList, setCatList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -31,11 +34,24 @@ export const Shop = () => {
   const [selectedRaces, setSelectedRaces] = useState([]);
 
   useEffect(() => {
-    axios.get(url).then((response) => {
-      setCatList(response.data);
-    });
+    axios
+      .get(url)
+      .then((response) => {
+        setCatList(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data from url:", error);
+        console.log("Trying alternate url...");
+        axios
+          .get(url2)
+          .then((response) => {
+            setCatList(response.data);
+          })
+          .catch((error) => {
+            console.error("Error fetching data from alternate url:", error);
+          });
+      });
   }, []);
-
   const catArray = Object.values(catList);
 
   const filteredCats = catArray.filter((cat) =>
