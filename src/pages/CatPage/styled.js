@@ -6,9 +6,9 @@ export const StyledMain = styled.div`
   height: 100vh;
   column-gap: 3rem;
   justify-content: center;
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     row-gap: 4rem;
-  };
+  }
 `;
 
 export const StyledTitle = styled.h1`
@@ -16,6 +16,21 @@ export const StyledTitle = styled.h1`
   font-size: 4rem;
   @media (max-width: 768px) {
     font-size: 2rem;
+  }
+`;
+
+export const Optionals = styled.div`
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+`;
+export const OptionalImageCat = styled.img`
+  width: 20%;
+  opacity: 40%;
+  &:hover{
+    transition: 0.3s ease-in-out;
+    border: 1px solid #fff;
+    opacity: 100%;
   }
 `;
 
@@ -29,7 +44,7 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledImage = styled.img`
-  width: 100%;
+  max-width: 100%;
   border-radius: 2rem;
 `;
 

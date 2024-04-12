@@ -10,6 +10,8 @@ import {
   StyledSpan,
   StyledSubMain,
   StyledTitle,
+  OptionalImageCat,
+  Optionals,
 } from "./styled";
 import Toast from "../../components/Toast";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,6 +22,7 @@ const CatPage = () => {
   const location = useLocation();
   const cat = location.state;
   const [visible, setVisible] = useState(false);
+  const [catImage, setCatImage] = useState(cat.image);
 
   const showToastAndAddToCart = () => {
     dispatch(addItemsToCart(cat));
@@ -33,7 +36,13 @@ const CatPage = () => {
     <StyledMain>
       <StyledContainer>
         <StyledTitle>{cat.name}</StyledTitle>
-        <StyledImage src={cat.image} />
+        <StyledImage src={catImage} />
+
+        <Optionals>
+        <OptionalImageCat src={cat.image} onClick={()=>setCatImage(cat.image)} />
+          <OptionalImageCat src="/src/assets/cat.jpg" onClick={()=>setCatImage("/src/assets/cat.jpg")} />
+          <OptionalImageCat src="/src/assets/cat1.jpeg" onClick={()=>setCatImage("/src/assets/cat1.jpeg")} />
+        </Optionals>
         <StyledButton onClick={() => showToastAndAddToCart()}>Buy</StyledButton>
         {visible && (
           <Toast

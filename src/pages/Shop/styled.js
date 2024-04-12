@@ -138,15 +138,15 @@ export const StyledPagination = styled.div`
 `;
 
 export const StyledButtonPag = styled.button`
-  background-color: #0d1f2d;
+  background-color: ${({disabled})=>(disabled ? "gray" : " #0d1f2d;")};
   border: none;
   color: #fff;
   width: 12rem;
   padding: 1rem;
   &:hover {
     transition: 0.3s ease-in;
-    background-color: #fff;
-    color: black;
+    background-color: ${({disabled})=>(disabled ? "gray" : " #fff;")};
+    color:  ${({disabled})=>(disabled ? "#fff" : " #000;")};
   }
 `;
 
