@@ -5,4 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/cat-shop',
+  sourcemap: true,
+  assetsInlineLimit: 0,
 })
