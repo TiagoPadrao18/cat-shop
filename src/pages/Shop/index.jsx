@@ -25,8 +25,6 @@ import MockData from "./cats.json"
 
 export const Shop = () => {
   const url = "https://localhost:8080/cats";
-  const url2 = MockData;
-  console.log(url2);
 
   const [catList, setCatList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -42,14 +40,7 @@ export const Shop = () => {
       .catch((error) => {
         console.error("Error fetching data from url:", error);
         console.log("Trying alternate url...");
-        axios
-          .get(url2)
-          .then((response) => {
-            setCatList(response.data);
-          })
-          .catch((error) => {
-            console.error("Error fetching data from alternate url:", error);
-          });
+        setCatList(MockData);
       });
   }, []);
   const catArray = Object.values(catList);
