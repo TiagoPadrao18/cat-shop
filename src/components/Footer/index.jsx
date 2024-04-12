@@ -1,5 +1,5 @@
 import { StyledFooter, StyledSocialImg, StyledTitle } from "./styled";
-
+import footerLogo from "/src/assets/github.png";
 const Footer = () => {
   return (
     <StyledFooter>
@@ -8,7 +8,7 @@ const Footer = () => {
         href="https://github.com/TiagoPadrao18?tab=repositories"
         target="_blank"
       >
-        <StyledSocialImg src="/src/assets/github.png" alt="an git hub icon" />
+        <StyledSocialImg src={footerLogo} alt="an git hub icon" />
       </a>
     </StyledFooter>
   );
