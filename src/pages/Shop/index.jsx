@@ -21,11 +21,11 @@ import {
   FilterSubtitle,
 } from "./styled";
 import { useEffect, useState } from "react";
-
+import MockData from "./cats.json"
 
 export const Shop = () => {
   const url = "https://localhost:8080/cats";
-  const url2 = "/src/pages/Shop/cats.json";
+  const url2 = MockData;
   console.log(url2);
 
   const [catList, setCatList] = useState([]);
