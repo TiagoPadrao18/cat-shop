@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import {
   ResponsiveBurger,
@@ -15,8 +15,10 @@ import {
   Trace,
   MenuMobile,
   TopMenu,
-  CloseMobile
-
+  CloseMobile,
+  ContentMobile,
+  StyledLinks,
+  StyledCartImagee,
 } from "./styled";
 import { useState, useEffect } from "react";
 import { getUsername } from "../../store/user/selectors";
@@ -28,6 +30,7 @@ const Navbar = ({ setCartOpacity }) => {
   const [opacityImg, setOpacityImg] = useState(0);
   const username = localStorage.getItem("userName");
   const quantityInCart = useSelector(getQuantityInCart);
+  const navigate = useNavigate();
 
   const changeOpacity = () => {
     if (opacity === 0) {
@@ -73,7 +76,18 @@ const Navbar = ({ setCartOpacity }) => {
   const [display, setDisplay] = useState("none");
 
   const renderMenuMobile = () => {
-    setDisplay(display === "none"? "block" : "none");
+    setDisplay(display === "none" ? "block" : "none");
+  };
+
+  const renderMenuAndLogout = () => {
+    localStorage.removeItem("userName");
+    setDisplay(display === "none" ? "block" : "none");
+  };
+
+  const logout = () => {
+    localStorage.removeItem("userName");
+    navigate("/public/login");
+    setDisplay(display === "none" ? "block" : "none");
   };
 
   return (
@@ -95,6 +109,16 @@ const Navbar = ({ setCartOpacity }) => {
           )}
         </StyledName>
 
+        <StyledCartImage
+          src="/src/assets/icons8-cart-96.png"
+          onClick={changeOpacity}
+          opacity={opacity}
+        />
+        <StyledCartImagee
+          src="/src/assets/logout50.png"
+          onClick={() => logout()}
+        />
+
         <ResponsiveBurger onClick={() => renderMenuMobile()}>
           <Trace />
           <Trace />
@@ -102,21 +126,31 @@ const Navbar = ({ setCartOpacity }) => {
         </ResponsiveBurger>
         <MenuMobile display={display}>
           <TopMenu>
-          <CloseMobile onClick={() => renderMenuMobile()}>X</CloseMobile>
+            <CloseMobile onClick={() => renderMenuMobile()}>X</CloseMobile>
           </TopMenu>
+          <ContentMobile>
+            <StyledLinks onClick={() => renderMenuMobile()} to="/public/home">
+              Home
+            </StyledLinks>
+            <StyledLinks onClick={() => renderMenuMobile()} to="/public/shop">
+              Shop
+            </StyledLinks>
+            <StyledLinks
+              onClick={() => renderMenuMobile()}
+              to="/public/checkout"
+            >
+              Checkout
+            </StyledLinks>
+            <StyledLinks onClick={() => renderMenuAndLogout()} to="/login">
+              Logout
+            </StyledLinks>
+          </ContentMobile>
         </MenuMobile>
-        <StyledCartDiv>
-          <StyledCartImage
-            src="/src/assets/icons8-cart-96.png"
-            onClick={changeOpacity}
-            opacity={opacity}
-          />
-          <TestDiv>
-            <StyledCartCount onClick={changeOpacity} opacity={opacityImg}>
-              {quantityInCart}
-            </StyledCartCount>
-          </TestDiv>
-        </StyledCartDiv>
+        <TestDiv>
+          <StyledCartCount onClick={changeOpacity} opacity={opacityImg}>
+            {quantityInCart}
+          </StyledCartCount>
+        </TestDiv>
       </StyledRightNav>
     </StyledNavbar>
   );

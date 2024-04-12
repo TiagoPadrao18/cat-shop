@@ -6,6 +6,9 @@ export const StyledMain = styled.div`
   height: 100vh;
   column-gap: 3rem;
   justify-content: center;
+  @media(max-width: 768px) {
+    row-gap: 4rem;
+  };
 `;
 
 export const StyledTitle = styled.h1`
@@ -35,13 +38,13 @@ export const StyledRightContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   border-radius: 6px;
+  background-color: #0d1f2d;
 `;
 
 export const StyledSubMain = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   height: 80%;
   width: 40%;
   @media (max-width: 768px) {
@@ -52,20 +55,22 @@ export const StyledSubMain = styled.div`
 `;
 
 export const StyledInfo = styled.p`
-  color: #0d1f2d;
+  color: #fff;
   display: flex;
   column-gap: 1rem;
   font-size: 2rem;
-  padding: 4px;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   margin: 0;
   @media (max-width: 768px) {
     font-size: 1rem;
+    padding: 1rem;
   }
 `;
 export const StyledSpan = styled.p`
   color: #fff;
   font-size: 2rem;
-  padding: 4px;
   margin: 0;
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -74,17 +79,16 @@ export const StyledSpan = styled.p`
 `;
 
 export const StyledButton = styled.button`
-  background-color: #546a7b;
+  background-color: #0d1f2d;
   border: none;
   color: white;
   width: 12rem;
   padding: 1rem;
   border-radius: 4px;
-
   &:hover {
     background-color: white;
     transition: 0.3s ease-in;
-    color: #546a7b;
+    color: #0d1f2d;
     box-shadow: 0 0 11px rgba(0, 0, 0);
     cursor: pointer;
   }

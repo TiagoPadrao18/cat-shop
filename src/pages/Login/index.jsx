@@ -25,8 +25,9 @@ const LoginPage = () => {
   return (
     <StyledMainContainer>
       <StyledFormLogin onSubmit={submitLogin}>
-        <StyledTitle>Welcome</StyledTitle>
         <StyledInputContainer>
+        <StyledTitle>Login</StyledTitle>
+
           <Input
             label="UserName"
             placeholder="username"

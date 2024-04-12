@@ -8,14 +8,11 @@ import {
   VideoCat,
 } from "./styled";
 
-
 const Home = () => {
-
-
   return (
     <>
       <MainContainer>
-        <VideoCat src="/src/assets/catVideo.mp4" autoPlay muted loop/>
+        <VideoCat src="/src/assets/catVideo.mp4" autoPlay muted loop />
         <Title>Welcome to Paws & Claws Corne</Title>
         <StyledDivBtn>
           <Link>

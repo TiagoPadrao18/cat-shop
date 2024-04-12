@@ -9,10 +9,7 @@ const slideDownAnimation = keyframes`
   }
 `;
 
-
-
 export const StyledMainCard = styled.div`
-
   height: 60%;
   background-color: #0d1f2d;
   position: fixed;
@@ -28,6 +25,11 @@ export const StyledMainCard = styled.div`
       animation-name: ${slideDownAnimation};
     `}
   ${({ opacity }) => opacity === 0 && "display: none;"}
+  @media(max-width: 768px) {
+    left: 0;
+    width: 100%;
+    height: 90vh;
+  }
 `;
 
 export const StyledScaffold = styled.div`
@@ -58,6 +60,9 @@ export const ButtonCheckout = styled.button`
     transition: 0.3s ease-in-out;
     background-color: #0d1f2d;
     color: #fff;
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -91,6 +96,12 @@ export const StyledBottomCard = styled.div`
   padding-bottom: 2rem;
   display: flex;
   column-gap: 2rem;
+  @media (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+    padding:0;
+  }
+ 
 `;
 
 export const StyledProductImage = styled.img`

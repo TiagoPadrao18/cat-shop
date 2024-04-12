@@ -21,9 +21,10 @@ export const Div = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: #0d1f2d;
+  color: #fff;
   font-size: 4rem;
   font-weight: 300;
+  background-color: #0d1f2d;
   padding: 1rem;
   border-radius: 1rem;
   @media(max-width: 768px) {
@@ -43,16 +44,16 @@ export const VideoCat = styled.video`
 
 export const StyledButton = styled.button`
   padding: 1rem;
-  color: #0d1f2d;
+  color: #fff;
   border: 2px solid #0d1f2d;
   border-radius: 1rem;
+  border: none;
   width: 20em;
-  background-color: transparent;
+  background-color: #0d1f2d;
   &:hover {
     transition: 0.3s ease-in;
-    background-color: #0d1f2d;
-    border: none;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
   }
 `;
 

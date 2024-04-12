@@ -24,7 +24,7 @@ export const LeftFilterContainer = styled.div`
   flex-direction: column;
   width: 20%;
   height: 80%;
-  background-color: #546a7b;
+  background-color: #0d1f2d;
   border-radius: 1rem;
   padding-left: 2rem;
   margin: 2rem 2rem;
@@ -84,7 +84,7 @@ export const ImageCat = styled.img`
 export const CatCard = styled.div`
   display: flex;
   border-radius: 4px;
-  background-color: #546a7b;
+  background-color: #0d1f2d;
   align-items: center;
   justify-content: center;
   padding: 2rem;
@@ -138,7 +138,7 @@ export const StyledPagination = styled.div`
 `;
 
 export const StyledButtonPag = styled.button`
-  background-color: #546a7b;
+  background-color: #0d1f2d;
   border: none;
   color: #fff;
   width: 12rem;

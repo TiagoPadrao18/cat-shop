@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledTitle = styled.h1`
-  color: #0d1f2d;
+  color: #fff;
 `;
 
 export const StyledMainContainer = styled.div`
@@ -14,11 +14,12 @@ export const StyledForm = styled.form`
   margin-top: 2rem;
   width: 40%;
   height: 70%;
+  flex-wrap: wrap;
   display: flex;
   row-gap: 1rem;
   padding: 3rem;
   flex-direction: column;
-  background-color: #546a7b;
+  background-color: #0d1f2d;
   border-radius: 2px;
   box-shadow: 1px 3px 22px 0px rgba(0, 0, 0, 0.75);
 `;
