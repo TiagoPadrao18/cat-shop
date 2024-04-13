@@ -6,6 +6,7 @@ import PageLayout from "../layout";
 import { ShopItems } from "../pages/ShopItems";
 import CheckoutPage from "../pages/CheckoutPage";
 import LoginPage from "../pages/Login";
+import AboutPage from "../pages/About";
 
 export const router = createHashRouter([
   {
@@ -27,6 +28,10 @@ export const router = createHashRouter([
       {
         path: "item",
         element: <ShopItems />,
+      },
+      {
+        path: "about",
+        element: <AboutPage />,
       },
       {
         path: "checkout",

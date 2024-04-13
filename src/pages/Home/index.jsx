@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
 import videoBg from "/src/assets/catVideo.mp4";
 import {
@@ -10,6 +10,7 @@ import {
 } from "./styled";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <>
       <MainContainer>
@@ -17,7 +18,9 @@ const Home = () => {
         <Title>Welcome to Paws & Claws Corne</Title>
         <StyledDivBtn>
           <Link>
-            <StyledButton>View more</StyledButton>
+            <StyledButton onClick={navigate("/public/about")}>
+              View more
+            </StyledButton>
           </Link>
         </StyledDivBtn>
       </MainContainer>

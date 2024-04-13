@@ -58,6 +58,10 @@ const Navbar = ({ setCartOpacity }) => {
       url: "/public/home",
     },
     {
+      title: "About",
+      url: "/public/about",
+    },
+    {
       title: "Shop",
       url: "/public/shop",
     },
@@ -133,6 +137,9 @@ const Navbar = ({ setCartOpacity }) => {
           <ContentMobile>
             <StyledLinks onClick={() => renderMenuMobile()} to="/public/home">
               Home
+            </StyledLinks>
+            <StyledLinks onClick={() => renderMenuMobile()} to="/public/about">
+          About
             </StyledLinks>
             <StyledLinks onClick={() => renderMenuMobile()} to="/public/shop">
               Shop
