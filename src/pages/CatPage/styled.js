@@ -28,7 +28,7 @@ export const OptionalImageCat = styled.img`
   width: 20%;
   opacity: 40%;
   border-radius: 1rem;
-  transition: transform .3s; /* Animation */
+  transition: transform .3s;
   &:hover{
     transition: 0.3s ease-in-out;
     transform: scale(1.1);
