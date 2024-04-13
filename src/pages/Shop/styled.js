@@ -41,7 +41,6 @@ export const FilterTitle = styled.p`
 export const FilterSubtitle = styled.p`
   color: #fff;
   font-size: 1.6rem;
-  
 `;
 
 export const StyledLabel = styled.label`
@@ -52,11 +51,10 @@ export const FilterList = styled.li`
   display: flex;
   row-gap: 0.5rem;
   flex-direction: column;
- 
 `;
 
 export const InputCheckbox = styled.input`
-accent-color: #0d1f2d;
+  accent-color: #0d1f2d;
 `;
 
 export const CatsContainer = styled.div`
@@ -72,7 +70,7 @@ export const Title = styled.h1`
   color: #fff;
   font-size: 4rem;
   @media (max-width: 768px) {
-   font-size: 2rem;
+    font-size: 2rem;
   }
 `;
 
@@ -93,8 +91,10 @@ export const CatCard = styled.div`
   max-width: 200px;
   height: 400px;
   align-self: stretch;
+  transition: 0.3s ease-in-out;
   &:hover {
     box-shadow: 0 0 11px rgba(0, 0, 0);
+    transform: scale(1);
   }
 `;
 
@@ -138,15 +138,15 @@ export const StyledPagination = styled.div`
 `;
 
 export const StyledButtonPag = styled.button`
-  background-color: ${({disabled})=>(disabled ? "gray" : " #0d1f2d;")};
+  background-color: ${({ disabled }) => (disabled ? "gray" : " #0d1f2d;")};
   border: none;
   color: #fff;
   width: 12rem;
   padding: 1rem;
   &:hover {
     transition: 0.3s ease-in;
-    background-color: ${({disabled})=>(disabled ? "gray" : " #fff;")};
-    color:  ${({disabled})=>(disabled ? "#fff" : " #000;")};
+    background-color: ${({ disabled }) => (disabled ? "gray" : " #fff;")};
+    color: ${({ disabled }) => (disabled ? "#fff" : " #000;")};
   }
 `;
 

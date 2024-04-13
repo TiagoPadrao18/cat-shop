@@ -27,11 +27,18 @@ export const Optionals = styled.div`
 export const OptionalImageCat = styled.img`
   width: 20%;
   opacity: 40%;
+  border-radius: 1rem;
+  transition: transform .3s; /* Animation */
   &:hover{
     transition: 0.3s ease-in-out;
-    border: 1px solid #fff;
+    transform: scale(1.1);
     opacity: 100%;
+
   }
+  @media (max-width: 768px) {
+    width: 60%;
+  }
+
 `;
 
 export const StyledContainer = styled.div`

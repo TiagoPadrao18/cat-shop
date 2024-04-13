@@ -1,4 +1,6 @@
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   CatCard,
   CatDetail,
@@ -20,11 +22,12 @@ import {
   StyledLabel,
   FilterSubtitle,
 } from "./styled";
-import { useEffect, useState } from "react";
 import MockData from "./cats.json"
+import { Navigate } from "react-router-dom";
 
 export const Shop = () => {
   const url = "https://localhost:8080/cats";
+  const navigate = useNavigate();
 
   const [catList, setCatList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
