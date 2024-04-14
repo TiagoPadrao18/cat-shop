@@ -103,7 +103,7 @@ const Navbar = ({ setCartOpacity }) => {
           <StyledImage src={logo} />
         </StyledLink>
 
-        <StyledLink to="/public/home">PET-SHOP</StyledLink>
+        <StyledLink to="/public/home">PICTURE-SHOP</StyledLink>
       </StyledLeftNav>
       <StyledRightNav>
         {navElements}

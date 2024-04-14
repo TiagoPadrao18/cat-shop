@@ -125,7 +125,7 @@ export const Shop = () => {
           </FilterList>
         </LeftFilterContainer>
         <MainSubContainer>
-          <Title>Available Cats</Title>
+          <Title>Available Pictures of Cats</Title>
           <CatsContainer>{cardCats}</CatsContainer>
           <StyledPagination>
             <StyledButtonPag onClick={prevPage} disabled={currentPage === 1}>

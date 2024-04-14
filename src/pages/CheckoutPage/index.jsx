@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getPrice } from "../../store/cart/selectors";
 import { removeAllItemsFromCart } from "../../store/cart/actions";
-import creditImage from "/src/assets/masterCard.png";
+import creditImage from "/Users/mindera/Documents/MSchool/ReactProjects/catShop/src/assets/masterCard.png";
 import {
   CheckboxDiv,
   PaymentMethods,
@@ -103,14 +103,6 @@ const CheckoutPage = () => {
             selected={selectedPaymentMethod === "credit"}
           >
             Credit
-          </StyledButton>
-
-          <StyledButton
-            disabled
-            onClick={() => handlePaymentMethodClick("mbway")}
-            selected={selectedPaymentMethod === "mbway"}
-          >
-            Mbway
           </StyledButton>
         </PaymentMethods>
         {renderInputs()}
