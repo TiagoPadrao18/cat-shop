@@ -14,7 +14,6 @@ import {
   StyledLabel,
   StyledMainContainer,
   StyledTitle,
-  StyledImageContainer,
   StyledPrice,
 } from "./styled";
 import Toast from "../../components/Toast";

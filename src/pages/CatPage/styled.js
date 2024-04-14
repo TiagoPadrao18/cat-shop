@@ -53,6 +53,7 @@ export const StyledContainer = styled.div`
 export const StyledImage = styled.img`
   max-width: 50%;
 max-height: 24%;
+border: 12px double #000;
   border-radius: 2rem;
   @media(max-width: 768px){
     max-width: 100%;

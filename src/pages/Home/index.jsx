@@ -15,7 +15,7 @@ const Home = () => {
     <>
       <MainContainer>
         <VideoCat src={videoBg} autoPlay muted loop />
-        <Title>Welcome to Paws & Claws Corne</Title>
+        <Title>Welcome to Cat Art Store</Title>
         <StyledDivBtn>
           <Link>
             <StyledButton onClick={navigate("/public/about")}>
