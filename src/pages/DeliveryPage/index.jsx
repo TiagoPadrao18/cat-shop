@@ -5,8 +5,6 @@ import { getPrice } from "../../store/cart/selectors";
 import { removeAllItemsFromCart } from "../../store/cart/actions";
 import {
   CheckboxDiv,
-  PaymentMethods,
-  StyledButton,
   StyledCVV,
   StyledForm,
   StyledImage,
@@ -14,7 +12,6 @@ import {
   StyledLabel,
   StyledMainContainer,
   StyledTitle,
-  StyledPrice,
 } from "./styled";
 import Toast from "../../components/Toast";
 import Input from "../../components/Input";
@@ -24,8 +21,6 @@ import Dpd from "../../assets/dpd.png";
 const DeliveryPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const price = useSelector(getPrice);
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
   const [visible, setVisible] = useState(false);
 
   const showToastAndChangePage = () => {
