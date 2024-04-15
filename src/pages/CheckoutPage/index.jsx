@@ -32,7 +32,7 @@ const CheckoutPage = () => {
     dispatch(removeAllItemsFromCart());
     setTimeout(() => {
       setVisible(false);
-      navigate("/public/home");
+      navigate("/public/delivery");
     }, 5000);
   };
 
