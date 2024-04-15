@@ -7,6 +7,7 @@ import { ShopItems } from "../pages/ShopItems";
 import CheckoutPage from "../pages/CheckoutPage";
 import LoginPage from "../pages/Login";
 import AboutPage from "../pages/About";
+import DeliveryPage from "../pages/DeliveryPage";
 
 export const router = createHashRouter([
   {
@@ -36,6 +37,11 @@ export const router = createHashRouter([
       {
         path: "checkout",
         element: <CheckoutPage />,
+      
+      },
+      {
+        path: "delivery",
+        element: <DeliveryPage />,
       },
       {
         path: "cat/:id",
