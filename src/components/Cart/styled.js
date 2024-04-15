@@ -9,6 +9,9 @@ const slideDownAnimation = keyframes`
   }
 `;
 
+export const MainContainer = styled.div`
+`;
+
 export const StyledMainCard = styled.div`
   height: 60%;
   background-color: #0d1f2d;

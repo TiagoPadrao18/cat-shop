@@ -40,7 +40,7 @@ export const VideoCat = styled.video`
   left: 0;
   object-fit: fill;
   min-width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   z-index: -1;
   @media(max-width: 768px) {
     display: none;
